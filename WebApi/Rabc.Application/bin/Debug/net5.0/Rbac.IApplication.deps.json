@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Rbac.IApplication/1.0.0": {
+        "dependencies": {
+          "ClassLibraryDto": "1.0.0"
+        },
+        "runtime": {
+          "Rbac.IApplication.dll": {}
+        }
+      },
+      "ClassLibraryDto/1.0.0": {
+        "runtime": {
+          "ClassLibraryDto.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Rbac.IApplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ClassLibraryDto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

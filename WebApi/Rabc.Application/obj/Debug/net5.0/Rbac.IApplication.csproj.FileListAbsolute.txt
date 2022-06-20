@@ -1,0 +1,15 @@
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\bin\Debug\net5.0\Rbac.IApplication.deps.json
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\bin\Debug\net5.0\Rbac.IApplication.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\bin\Debug\net5.0\Rbac.IApplication.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\bin\Debug\net5.0\ClassLibraryDto.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\bin\Debug\net5.0\ClassLibraryDto.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.csproj.AssemblyReference.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.AssemblyInfoInputs.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.AssemblyInfo.cs
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.csproj.CoreCompileInputs.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.csproj.CopyComplete
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\refint\Rbac.IApplication.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\ref\Rbac.IApplication.dll

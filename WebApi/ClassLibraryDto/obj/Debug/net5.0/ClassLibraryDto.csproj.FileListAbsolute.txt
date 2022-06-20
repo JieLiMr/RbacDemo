@@ -1,0 +1,12 @@
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\bin\Debug\net5.0\ClassLibraryDto.deps.json
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\bin\Debug\net5.0\ClassLibraryDto.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\bin\Debug\net5.0\ClassLibraryDto.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\ClassLibraryDto.csproj.AssemblyReference.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\ClassLibraryDto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\ClassLibraryDto.AssemblyInfoInputs.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\ClassLibraryDto.AssemblyInfo.cs
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\ClassLibraryDto.csproj.CoreCompileInputs.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\ClassLibraryDto.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\refint\ClassLibraryDto.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\ClassLibraryDto.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\ClassLibraryDto\obj\Debug\net5.0\ref\ClassLibraryDto.dll

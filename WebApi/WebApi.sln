@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{74189BA0-85C5-46AA-938D-1439EC6DCC0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rbac.Entity", "ClassLibraryModel\Rbac.Entity.csproj", "{69445E2E-D31B-4E15-AA1E-E687F8E09497}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rbac.Application", "Rbac.Application\Rbac.Application.csproj", "{343B1DD7-DFC7-4A2C-A9E7-0B51AB649455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rbac.IApplication", "Rabc.Application\Rbac.IApplication.csproj", "{E9CE2519-76D5-41FF-964D-05EF25F060ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryDto", "ClassLibraryDto\ClassLibraryDto.csproj", "{98207222-1E2D-4D24-98E2-2F9E7792AC57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rbac.Repository", "Rbac.Repository\Rbac.Repository.csproj", "{2FE2ECD7-0728-474B-89D5-84AB1DEDAF2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rbac.IRepository", "Rbac.IRepository\Rbac.IRepository.csproj", "{7B4ECE07-404E-40C7-BFBA-B20F1A09E7F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74189BA0-85C5-46AA-938D-1439EC6DCC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74189BA0-85C5-46AA-938D-1439EC6DCC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74189BA0-85C5-46AA-938D-1439EC6DCC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74189BA0-85C5-46AA-938D-1439EC6DCC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69445E2E-D31B-4E15-AA1E-E687F8E09497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69445E2E-D31B-4E15-AA1E-E687F8E09497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69445E2E-D31B-4E15-AA1E-E687F8E09497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69445E2E-D31B-4E15-AA1E-E687F8E09497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343B1DD7-DFC7-4A2C-A9E7-0B51AB649455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343B1DD7-DFC7-4A2C-A9E7-0B51AB649455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343B1DD7-DFC7-4A2C-A9E7-0B51AB649455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343B1DD7-DFC7-4A2C-A9E7-0B51AB649455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9CE2519-76D5-41FF-964D-05EF25F060ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9CE2519-76D5-41FF-964D-05EF25F060ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9CE2519-76D5-41FF-964D-05EF25F060ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9CE2519-76D5-41FF-964D-05EF25F060ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98207222-1E2D-4D24-98E2-2F9E7792AC57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98207222-1E2D-4D24-98E2-2F9E7792AC57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98207222-1E2D-4D24-98E2-2F9E7792AC57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98207222-1E2D-4D24-98E2-2F9E7792AC57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FE2ECD7-0728-474B-89D5-84AB1DEDAF2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE2ECD7-0728-474B-89D5-84AB1DEDAF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE2ECD7-0728-474B-89D5-84AB1DEDAF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE2ECD7-0728-474B-89D5-84AB1DEDAF2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B4ECE07-404E-40C7-BFBA-B20F1A09E7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4ECE07-404E-40C7-BFBA-B20F1A09E7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4ECE07-404E-40C7-BFBA-B20F1A09E7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4ECE07-404E-40C7-BFBA-B20F1A09E7F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74CA66D8-7821-4D2E-B57B-B92EB3480377}
+	EndGlobalSection
+EndGlobal

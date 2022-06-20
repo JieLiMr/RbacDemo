@@ -1,0 +1,15 @@
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\bin\Debug\net5.0\Rbac.IRepository.deps.json
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\bin\Debug\net5.0\Rbac.IRepository.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\bin\Debug\net5.0\Rbac.IRepository.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\bin\Debug\net5.0\Rbac.Entity.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\bin\Debug\net5.0\Rbac.Entity.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\Rbac.IRepository.csproj.AssemblyReference.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\Rbac.IRepository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\Rbac.IRepository.AssemblyInfoInputs.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\Rbac.IRepository.AssemblyInfo.cs
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\Rbac.IRepository.csproj.CoreCompileInputs.cache
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\Rbac.IRepository.csproj.CopyComplete
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\Rbac.IRepository.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\refint\Rbac.IRepository.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\Rbac.IRepository.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.IRepository\obj\Debug\net5.0\ref\Rbac.IRepository.dll
