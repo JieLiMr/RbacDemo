@@ -1,4 +1,5 @@
-﻿using Rbac.Entity;
+﻿
+using Rbac.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace Rbac.IRepository
 
         List<Menu> GetAll();
         
+
     }
 }

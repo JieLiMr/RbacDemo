@@ -1482,6 +1482,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ClassLibraryDto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ClassLibraryDto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClassLibraryDto.dll": {}
+        }
+      },
       "Rbac.Entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1499,6 +1509,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "ClassLibraryDto": "1.0.0",
           "Rbac.Entity": "1.0.0"
         },
         "compile": {
@@ -5719,6 +5730,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "ClassLibraryDto/1.0.0": {
+      "type": "project",
+      "path": "../ClassLibraryDto/ClassLibraryDto.csproj",
+      "msbuildProject": "../ClassLibraryDto/ClassLibraryDto.csproj"
     },
     "Rbac.Entity/1.0.0": {
       "type": "project",

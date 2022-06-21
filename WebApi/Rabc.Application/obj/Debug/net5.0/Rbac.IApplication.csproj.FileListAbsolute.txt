@@ -13,3 +13,5 @@ C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rb
 C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\refint\Rbac.IApplication.dll
 C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\Rbac.IApplication.pdb
 C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\obj\Debug\net5.0\ref\Rbac.IApplication.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\bin\Debug\net5.0\Rbac.Entity.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rabc.Application\bin\Debug\net5.0\Rbac.Entity.pdb

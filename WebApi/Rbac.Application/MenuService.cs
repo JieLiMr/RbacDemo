@@ -51,5 +51,47 @@ namespace Rbac.Application
 
                 
         }
+
+
+        public List<AddMenuDto> GetAddDtoAll()
+        {
+            var list = dbContext.GetAll();
+            AddMenuDto menus = new AddMenuDto();
+            var menu = list.Where(m => m.ParentId == 0)
+                .Select(m => new AddMenuDto
+                {
+                    value = m.MenuId,
+                    label = m.MenuName,
+
+                }).ToList();
+            GetAddMenuDtoNodes(list, menu);
+            return menu;
+        }
+        private void GetAddMenuDtoNodes(List<Menu> list, List<AddMenuDto> menu)
+        {
+            foreach (var m in menu)
+            {
+                var _list = list.Where(ms => ms.ParentId == m.value).Select(ss => new AddMenuDto
+                {
+                    value = ss.MenuId,
+                    label = ss.MenuName,
+
+                }).ToList();
+
+                m.children.AddRange(_list);
+                GetAddMenuDtoNodes(list, _list);
+            }
+
+
+
+
+
+
+        }
+
+        public bool AddMenu(Menu obj)
+        {
+            return dbContext.Add(obj);
+        }
     }
 }

@@ -15,3 +15,5 @@ C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.Repository\obj\Debug\net5.0\Rba
 C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.Repository\obj\Debug\net5.0\refint\Rbac.Repository.dll
 C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.Repository\obj\Debug\net5.0\Rbac.Repository.pdb
 C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.Repository\obj\Debug\net5.0\ref\Rbac.Repository.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.Repository\bin\Debug\net5.0\ClassLibraryDto.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\Rbac.Repository\bin\Debug\net5.0\ClassLibraryDto.pdb

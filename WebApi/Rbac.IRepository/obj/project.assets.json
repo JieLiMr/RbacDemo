@@ -1482,6 +1482,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ClassLibraryDto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ClassLibraryDto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClassLibraryDto.dll": {}
+        }
+      },
       "Rbac.Entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -5707,6 +5717,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "ClassLibraryDto/1.0.0": {
+      "type": "project",
+      "path": "../ClassLibraryDto/ClassLibraryDto.csproj",
+      "msbuildProject": "../ClassLibraryDto/ClassLibraryDto.csproj"
+    },
     "Rbac.Entity/1.0.0": {
       "type": "project",
       "path": "../ClassLibraryModel/Rbac.Entity.csproj",
@@ -5715,6 +5730,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "ClassLibraryDto >= 1.0.0",
       "Rbac.Entity >= 1.0.0"
     ]
   },
@@ -5753,6 +5769,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryDto\\ClassLibraryDto.csproj": {
+              "projectPath": "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryDto\\ClassLibraryDto.csproj"
+            },
             "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryModel\\Rbac.Entity.csproj": {
               "projectPath": "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryModel\\Rbac.Entity.csproj"
             }

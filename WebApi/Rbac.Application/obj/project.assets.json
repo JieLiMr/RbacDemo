@@ -1509,7 +1509,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "ClassLibraryDto": "1.0.0"
+          "ClassLibraryDto": "1.0.0",
+          "Rbac.Entity": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Rbac.IApplication.dll": {}
@@ -1522,6 +1523,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "ClassLibraryDto": "1.0.0",
           "Rbac.Entity": "1.0.0"
         },
         "compile": {

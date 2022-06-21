@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClassLibraryDto\ClassLibraryDto.csproj" />
+    <ProjectReference Include="..\ClassLibraryModel\Rbac.Entity.csproj" />
   </ItemGroup>
 
 </Project>

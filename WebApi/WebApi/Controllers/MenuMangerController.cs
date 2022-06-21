@@ -1,6 +1,7 @@
 ﻿using ClassLibraryDto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Rbac.Entity;
 using Rbac.IApplication;
 using System.Collections.Generic;
 
@@ -19,6 +20,20 @@ namespace WebApi.Controllers
         public List<MenuDto> getAll()
         {
             return me.GetAll();
+        }
+
+        [HttpGet]
+        public List<AddMenuDto> GetAddDtoAll()
+        {
+            return me.GetAddDtoAll();
+        }
+
+        [HttpPost]
+        public bool AddMenu(Menu obj)
+        {
+            obj.CreateTime = System.DateTime.Now;
+            obj.IsDelete = false;
+            return me.AddMenu(obj);
         }
     }
 }

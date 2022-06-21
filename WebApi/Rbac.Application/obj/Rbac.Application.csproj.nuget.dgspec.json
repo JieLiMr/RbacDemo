@@ -168,6 +168,9 @@
             "projectReferences": {
               "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryDto\\ClassLibraryDto.csproj": {
                 "projectPath": "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryDto\\ClassLibraryDto.csproj"
+              },
+              "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryModel\\Rbac.Entity.csproj": {
+                "projectPath": "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryModel\\Rbac.Entity.csproj"
               }
             }
           }
@@ -300,6 +303,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryDto\\ClassLibraryDto.csproj": {
+                "projectPath": "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryDto\\ClassLibraryDto.csproj"
+              },
               "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryModel\\Rbac.Entity.csproj": {
                 "projectPath": "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\ClassLibraryModel\\Rbac.Entity.csproj"
               }

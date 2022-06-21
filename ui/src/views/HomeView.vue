@@ -1,18 +1,163 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <el-container style="height: 500px; border: 1px solid #eee">
+  <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+     <el-menu
+          :collapse="isCollapse"
+          :default-active="activeIndex"
+          :unique-opened="true"
+          router
+          ref="elMenu"
+          @select="menuSelect"
+        >
+          <!-- 递归动态菜单 -->
+          <myitem :data="menuArr"></myitem>
+        </el-menu>
+  </el-aside>
+  
+  <el-container>
+    <el-header style="text-align: right; font-size: 12px">
+      <el-dropdown>
+        <i class="el-icon-setting" style="margin-right: 15px"></i>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>查看</el-dropdown-item>
+          <el-dropdown-item>新增</el-dropdown-item>
+          <el-dropdown-item>删除</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <span>王小虎</span>
+    </el-header>
+    
+    <el-main>
+      <router-view/>
+    </el-main>
+  </el-container>
+</el-container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import myitem from "../views/MenuView.vue";
 export default {
-  name: 'HomeView',
+  name: "Home",
   components: {
-    HelloWorld
-  }
-}
+    myitem,
+  },
+  data() {
+    return {
+      isCollapse: false,
+
+      activeIndex: this.$route.path,
+
+
+      tableData:[],
+      // 然后再通过权限管理页面，去添加或修改这个树结构，这样的话，前端就会呈现出来了
+      menuArr: [
+        {
+          name: "前端三大框架",
+          path: "前端三大框架",
+          icon: "el-icon-s-home",
+          children: [
+            {
+              name: "vue页面",
+              path: "/vue",
+              icon: "el-icon-star-off",
+              children: [
+                {
+              name: "vue页面",
+              path: "/vue",
+              icon: "el-icon-star-off",
+              children: [],
+            }
+              ],
+            },
+            {
+              name: "react页面",
+              path: "/react",
+              icon: "el-icon-star-off",
+              children: [],
+            },
+            {
+              name: "angular页面",
+              path: "/angular",
+              icon: "el-icon-star-off",
+              children: [],
+            },
+          ],
+        },
+        {
+          name: "后端两大框架",
+          path: "后端两大框架",
+          icon: "el-icon-s-cooperation",
+          children: [
+            {
+              name: "Spring Boot页面",
+              path: "/springBoot",
+              icon: "el-icon-star-off",
+              children: [],
+            },
+            {
+              name: "Spring页面",
+              path: "Spring页面", // 有children，name和path就保持一致；没有的话，path的值就是路由表中用到的，不保持一致也行，因为不会用到
+              icon: "el-icon-star-off",
+              children: [
+                {
+                  name: "MySql页面",
+                  path: "/mysql",
+                  icon: "el-icon-star-off",
+                  children: [],
+                },
+                {
+                  name: "Redis页面",
+                  path: "/redis",
+                  icon: "el-icon-star-off",
+                  children: [],
+                },
+              ],
+            },
+            {
+              name: "Mybatis页面",
+              path: "/mybatis",
+              icon: "el-icon-star-off",
+              children: [],
+            },
+          ],
+        },
+        {
+          name: "onlyOne",
+          path: "/onlyOne",
+          icon: "el-icon-star-off",
+          children: [],
+        },
+      ],
+    };
+  },
+  mounted() {
+    console.log(this.$route)
+    this.showInfor();
+  },
+  methods: {
+    menuSelect(index) {
+      this.activeIndex = index;
+    },
+     showInfor()
+        {
+            this.$axios.get("https://localhost:44349/api/MenuManger/getAll").then
+            (
+                res=>{
+                    this.menuArr=res.data;
+                    console.log(this.menuArr)
+                }
+                
+            )
+        },
+    loginOut() {
+      this.$router.push({
+        path: "/login",
+      });
+      sessionStorage.removeItem("token");
+    },
+  },
+};
 </script>
+

@@ -8,7 +8,14 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    children:[
+      {
+        path: '/MenuAdd',
+        name: '/MenuAdd',
+        component: () => import('../views/AddView.vue')
+      }
+    ]
   },
   {
     path: '/about',
@@ -19,7 +26,15 @@ const routes = [
     path: '/ShowView',
     name: 'ShowView',
     component: () => import('../views/ShowView.vue')
+  },
+  {
+    path: '/MenuView',
+    name: 'MenuView',
+    component: () => import('../views/MenuView.vue')
   }
+  ,
+ 
+  
 ]
 
 const router = new VueRouter({

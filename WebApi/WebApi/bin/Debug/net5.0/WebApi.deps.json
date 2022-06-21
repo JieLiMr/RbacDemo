@@ -1412,7 +1412,8 @@
       },
       "Rbac.IApplication/1.0.0": {
         "dependencies": {
-          "ClassLibraryDto": "1.0.0"
+          "ClassLibraryDto": "1.0.0",
+          "Rbac.Entity": "1.0.0"
         },
         "runtime": {
           "Rbac.IApplication.dll": {}
@@ -1423,6 +1424,7 @@
       },
       "Rbac.IRepository/1.0.0": {
         "dependencies": {
+          "ClassLibraryDto": "1.0.0",
           "Rbac.Entity": "1.0.0"
         },
         "runtime": {
