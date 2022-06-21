@@ -93,5 +93,20 @@ namespace Rbac.Application
         {
             return dbContext.Add(obj);
         }
+
+        public bool Del(int id)
+        {
+            bool isOk = false;
+            var list=dbContext.GetAll();
+            if( list.Where(m=>m.ParentId==id).Count()>0)
+            {
+                isOk = false;
+            }
+            else
+            {
+               isOk=dbContext.Delete(id);
+            }
+            return isOk;
+        }
     }
 }

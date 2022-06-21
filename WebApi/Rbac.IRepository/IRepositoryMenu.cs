@@ -10,7 +10,7 @@ namespace Rbac.IRepository
     {
 
         bool Add(Menu obj);
-        bool Delete(int obj);
+        bool Delete(int id);
 
         bool Updete(Menu id );
 

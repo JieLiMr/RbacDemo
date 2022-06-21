@@ -32,6 +32,7 @@ namespace Rbac.Repository
         {
           return  db.Meau.AsQueryable().ToList();
         }
+        
 
         public bool Updete(Menu obj)
         {

@@ -10,5 +10,6 @@ namespace Rbac.IApplication
         List<MenuDto> GetAll();
         List<AddMenuDto> GetAddDtoAll();
         bool AddMenu(Menu  obj);
+        public bool Del(int id);
     }
 }

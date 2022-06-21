@@ -35,5 +35,10 @@ namespace WebApi.Controllers
             obj.IsDelete = false;
             return me.AddMenu(obj);
         }
+        [HttpGet]
+        public bool Del(int id)
+        {
+            return me.Del(id);
+        }
     }
 }

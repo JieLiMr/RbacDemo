@@ -14,6 +14,16 @@ const routes = [
         path: '/MenuAdd',
         name: '/MenuAdd',
         component: () => import('../views/AddView.vue')
+      },
+      {
+        path: '/MenuManger',
+        name: 'ShowView',
+        component: () => import('../views/ShowView.vue')
+      },
+      {
+        path: '/Edit',
+        name: 'Edit',
+        component: () => import('../views/EditView.vue')
       }
     ]
   },
@@ -22,11 +32,7 @@ const routes = [
     name: 'about',
     component: () => import('../views/AboutView.vue')
   },
-  {
-    path: '/ShowView',
-    name: 'ShowView',
-    component: () => import('../views/ShowView.vue')
-  },
+ 
   {
     path: '/MenuView',
     name: 'MenuView',
