@@ -3,6 +3,7 @@
      <el-form ref="form" :model="form" label-width="80px">
     <el-form-item label="父级菜单">
       <el-cascader
+      v-model="form.ParentId"
       ref="ddp"
     :options="options"
     @change="handleChange"
@@ -25,22 +26,26 @@
     </div>
 </template>
 <script>
+
   export default {
+    props:["EditData"],
     data() {
       return {
         options: [],
         form:{
             MenuName:'',
             LinkUrl:'',
+            MenuId:'',
             ParentId:''
         }
       };
     },
     mounted()
-    {
+    {   
+       this.showDate();
+      this.getMenu(this.EditData);
+
        
-        console.log( this.$refs.ddp)
-        this.showDate();
     },
     methods:{
         showDate()
@@ -55,27 +60,52 @@
             )
         },
         handleChange(value) {
-             console.log( this.$refs.form)
-        this.form.ParentId=value[value.length-1]
-        console.log(this.form.ParentId)
+          debugger
+            this.form.ParentId=value[value.length-1]
+       
+        console.log(this.form.menuId)
       },
       onSubmit()
       {
-        this.$axios.post("https://localhost:44349/api/MenuManger/AddMenu",this.form).then
+        debugger 
+        this.$axios.post("https://localhost:44349/api/MenuManger/Edit",this.form).then
                     (
                         res=>{
                             if(res.data)
                             {
-                                this.$message.success('添加成功');
+                                this.$message.success('修改成功');      
+                                this.$emit("edit",true)                        
+                            }
+                            else
+                            {
+                              this.$message.warning('修改失败');
                             }
                             
                         }
                     )
+      },
+      getMenu(val)
+      {
+
+            this.form.ParentId=val.menuId;
+            this.form.MenuId=val.menuId;
+            this.form.MenuName=val.menuName;
+            this.form.LinkUrl=val.linkUrl;      
+       
       }
     },
     created()
     {
 
-    }
+    },
+       watch:{
+        EditData:function (newval,oldval)
+        {
+          debugger
+
+          this.getMenu(newval);
+         console.log(newval,oldval);
+        }
+    },
   };
 </script>

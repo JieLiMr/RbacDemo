@@ -19,12 +19,6 @@
       sortable
       width="180">
     </el-table-column>
-     <el-table-column
-      prop="menuName"
-      label="菜单名称"
-      sortable
-      width="180">
-    </el-table-column>
        <el-table-column
       label="操作"
       width="180">
@@ -40,15 +34,13 @@
   :visible.sync="dialogVisible"
   width="30%"
   :before-close="handleClose">
-  <edit-view :EditData="EditData"></edit-view>
+  <edit-view :EditData="EditData" @edit="edit"></edit-view>
   </el-dialog>
     </div>
 </template>
 
 <script>
 import EditView from '../views/EditView.vue'
-
-import EditMenu from '../views/EditView.vue'
 export default {
   components: { EditView },
 data()
@@ -60,6 +52,9 @@ data()
     }
 }   
     ,methods:{
+      handleClose(){
+        this.dialogVisible=false;
+      },
         showInfor()
         {
             this.$axios.get("https://localhost:44349/api/MenuManger/getAll").then
@@ -97,7 +92,17 @@ data()
         },
         upd(val)
         {
-           console.log(val);
+          debugger
+          this.EditData=val;
+          console.log(this.EditData);
+
+          this.dialogVisible=true;
+        },
+        edit(val)
+        {
+          console.log(val);
+           this.dialogVisible=false;
+           this.showInfor();
         }
 
     },created()

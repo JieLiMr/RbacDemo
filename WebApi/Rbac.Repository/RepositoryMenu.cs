@@ -3,7 +3,7 @@ using Rbac.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Z.EntityFramework;
 namespace Rbac.Repository
 {
     public class RepositoryMenu : IRepositoryMenu
@@ -23,9 +23,7 @@ namespace Rbac.Repository
 
         public bool Delete(int id )
         {
-            var obj=db.Meau.Find(id);
-           db.Meau.Remove(obj);
-            return db.SaveChanges() > 0;
+            return db.Meau.DeleteByKey(id) > 0;    
         }
 
         public List<Menu> GetAll()
@@ -36,8 +34,7 @@ namespace Rbac.Repository
 
         public bool Updete(Menu obj)
         {
-            db.Entry(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            return db.SaveChanges() > 0;
+            return db.Meau.Where(m => m.MenuId == obj.MenuId).UpdateFromQuery(m => new Menu { ParentId = obj.ParentId, MenuName = obj.MenuName, LinkUrl = obj.LinkUrl, }) > 0;
         }
     }
 }

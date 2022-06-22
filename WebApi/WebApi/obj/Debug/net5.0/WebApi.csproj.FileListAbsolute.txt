@@ -70,3 +70,6 @@ C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Rbac.Reposit
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Rbac.Application.pdb
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Rbac.IRepository.pdb
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Rbac.Repository.pdb
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Z.EntityFramework.Extensions.EFCore.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Z.EntityFramework.Plus.EFCore.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Z.Expressions.Eval.dll

@@ -108,5 +108,11 @@ namespace Rbac.Application
             }
             return isOk;
         }
+
+        public bool Edit(Menu dto)
+        {
+           
+            return dbContext.Updete(dto);
+        }
     }
 }

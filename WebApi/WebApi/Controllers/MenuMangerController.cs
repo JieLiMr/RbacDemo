@@ -40,5 +40,10 @@ namespace WebApi.Controllers
         {
             return me.Del(id);
         }
+        [HttpPost]
+        public bool Edit(Menu obj)
+        {
+            return me.Edit(obj);
+        }
     }
 }
