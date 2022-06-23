@@ -73,3 +73,9 @@ C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Rbac.Reposit
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Z.EntityFramework.Extensions.EFCore.dll
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Z.EntityFramework.Plus.EFCore.dll
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Z.Expressions.Eval.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

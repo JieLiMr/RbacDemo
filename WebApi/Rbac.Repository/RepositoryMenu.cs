@@ -6,31 +6,31 @@ using System.Linq;
 using Z.EntityFramework;
 namespace Rbac.Repository
 {
-    public class RepositoryMenu : IRepositoryMenu
+    public class RepositoryMenu:IRepositoryMenu
     {
         public RepositoryMenu(MyDbContext myDbContext)
         {
             db = myDbContext;
         }
 
-        public MyDbContext db  { get; }
+        public MyDbContext db { get; }
 
         public bool Add(Menu obj)
         {
             db.Meau.Add(obj);
-          return  db.SaveChanges() > 0;
+            return db.SaveChanges() > 0;
         }
 
-        public bool Delete(int id )
+        public bool Delete(int id)
         {
-            return db.Meau.DeleteByKey(id) > 0;    
+            return db.Meau.DeleteByKey(id) > 0;
         }
 
         public List<Menu> GetAll()
         {
-          return  db.Meau.AsQueryable().ToList();
+            return db.Meau.AsQueryable().ToList();
         }
-        
+
 
         public bool Updete(Menu obj)
         {

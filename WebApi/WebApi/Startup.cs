@@ -17,6 +17,8 @@ using Rbac.IRepository;
 using Rbac.Repository;
 using Rbac.IApplication;
 using Rbac.Application;
+using AutoMapper;
+using System.Reflection;
 
 namespace WebApi
 {
@@ -41,6 +43,7 @@ namespace WebApi
             services.AddDbContext<MyDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("sqlserver")));
             services.AddScoped<IRepositoryMenu, RepositoryMenu>();
             services.AddScoped<IMenuService, MenuService>();
+            services.AddAutoMapper(Assembly.Load("Rbac.Application"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,5 @@
-﻿using ClassLibraryDto;
+﻿using AutoMapper;
+using ClassLibraryDto;
 using Rbac.Entity;
 using Rbac.IApplication;
 using Rbac.IRepository;
@@ -10,9 +11,12 @@ namespace Rbac.Application
 {
     public class MenuService : IMenuService
     {
-        public MenuService(IRepositoryMenu db)
+        private readonly IMapper mapper;
+
+        public MenuService(IRepositoryMenu db,IMapper mapper)
         {
             dbContext=db;
+            this.mapper = mapper;
         }
         public IRepositoryMenu dbContext { get; set; }
         public List<MenuDto> GetAll()
@@ -91,6 +95,7 @@ namespace Rbac.Application
 
         public bool AddMenu(Menu obj)
         {
+            var s=mapper.Map<EditMenuDto>(obj);
             return dbContext.Add(obj);
         }
 
