@@ -9,19 +9,18 @@ using System.Linq;
 
 namespace Rbac.Application
 {
-    public class MenuService : IMenuService
+    public class MenuService :BaseService<Menu,Menu>, IMenuService
     {
-        private readonly IMapper mapper;
+        private readonly IRepositoryMenu db;
 
-        public MenuService(IRepositoryMenu db,IMapper mapper)
+        public MenuService(IRepositoryMenu db,IMapper mapper):base(db,mapper)
         {
-            dbContext=db;
-            this.mapper = mapper;
+           
+            this.db = db;
         }
-        public IRepositoryMenu dbContext { get; set; }
         public List<MenuDto> GetAll()
         {
-          var list=  dbContext.GetAll();
+          var list= db.GetAll();
             MenuDto menus= new MenuDto();
             var menu=list.Where(m=>m.ParentId==0)
                 .Select(m=>new MenuDto { 
@@ -59,7 +58,7 @@ namespace Rbac.Application
 
         public List<AddMenuDto> GetAddDtoAll()
         {
-            var list = dbContext.GetAll();
+            var list = db.GetAll();
             AddMenuDto menus = new AddMenuDto();
             var menu = list.Where(m => m.ParentId == 0)
                 .Select(m => new AddMenuDto
@@ -91,25 +90,18 @@ namespace Rbac.Application
 
 
 
-        }
-
-        public bool AddMenu(Menu obj)
-        {
-            var s=mapper.Map<EditMenuDto>(obj);
-            return dbContext.Add(obj);
-        }
-
+        } 
         public bool Del(int id)
         {
             bool isOk = false;
-            var list=dbContext.GetAll();
+            var list=db.GetAll();
             if( list.Where(m=>m.ParentId==id).Count()>0)
             {
                 isOk = false;
             }
             else
             {
-               isOk=dbContext.Delete(id);
+               isOk=db.Delete(id)>0;
             }
             return isOk;
         }
@@ -117,7 +109,12 @@ namespace Rbac.Application
         public bool Edit(Menu dto)
         {
            
-            return dbContext.Updete(dto);
+            return db.Update(dto)>0;
+        }
+
+        public bool AddMenu(Menu obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

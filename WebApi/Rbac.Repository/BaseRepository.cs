@@ -9,22 +9,17 @@ using System.Threading.Tasks;
 
 namespace Rbac.Repository
 {
-    internal class BaseRepository<TEntity, TKey> : IBaseRepositor<TEntity, TKey>
+    public class BaseRepository<TEntity, TKey> :IBaseRepository<TEntity, TKey>
         where TEntity : class
         where TKey : struct
     {
-        private readonly MyDbContext myDb;
-
-        public BaseRepository(MyDbContext myDb)
-        {
-            this.myDb = myDb;
-        }
+        protected  MyDbContext myDb;
         /// <summary>
         /// 批量添加
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
-        public int BulkCreate(List<TEntity> entities)
+        public virtual int BulkCreate(List<TEntity> entities)
         {
             myDb.Set<TEntity>().AddRange(entities);
             return myDb.SaveChanges();
@@ -34,7 +29,7 @@ namespace Rbac.Repository
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public int Create(TEntity entity)
+        public virtual int Create(TEntity entity)
         {
             myDb.Set<TEntity>().Add(entity);
             return myDb.SaveChanges();
@@ -44,16 +39,16 @@ namespace Rbac.Repository
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public int Delete(Expression<Func<TEntity, bool>> predicate)
+        public virtual int Delete(Expression<Func<TEntity, bool>> predicate)
         {
-          return  myDb.Set<TEntity>().Where(predicate).DeleteFromQuery();
+          return myDb.Set<TEntity>().Where(predicate).DeleteFromQuery();
         }
         /// <summary>
         /// 根据主键删除
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public int Delete(TKey key)
+        public virtual int Delete(TKey key)
         {
            return myDb.Set<TEntity>().DeleteByKey(key);
         }
@@ -62,7 +57,7 @@ namespace Rbac.Repository
         /// 获取全部数据List
         /// </summary>
         /// <returns></returns>
-        public List<TEntity> GetAll()
+        public virtual List<TEntity> GetAll()
         {
            return myDb.Set<TEntity>().ToList();
         }
@@ -72,7 +67,7 @@ namespace Rbac.Repository
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public TEntity GetEntity(Expression<Func<TEntity, bool>> predicate)
+        public virtual TEntity GetEntity(Expression<Func<TEntity, bool>> predicate)
         {
             return myDb.Set<TEntity>().Where(predicate).FirstOrDefault();
         }
@@ -82,7 +77,7 @@ namespace Rbac.Repository
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public TEntity GetEntity(TKey key)
+        public virtual TEntity GetEntity(TKey key)
         {
             return myDb.Set<TEntity>().Find(key);
         }
@@ -91,7 +86,7 @@ namespace Rbac.Repository
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> predicate)
+        public virtual List<TEntity> GetList(Expression<Func<TEntity, bool>> predicate)
         {
            return myDb.Set<TEntity>().Where(predicate).ToList();
         }
@@ -101,7 +96,7 @@ namespace Rbac.Repository
         /// <param name="predicate"></param>
         /// <returns></returns>
 
-        public IQueryable<TEntity> GetQuery(Expression<Func<TEntity, bool>> predicate)
+        public virtual IQueryable<TEntity> GetQuery(Expression<Func<TEntity, bool>> predicate)
         {
             return myDb.Set<TEntity>().Where(predicate);
         }
@@ -111,7 +106,7 @@ namespace Rbac.Repository
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public int Update(TEntity entity)
+        public virtual int Update(TEntity entity)
         {
             myDb.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             return myDb.SaveChanges();

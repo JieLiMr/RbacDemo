@@ -6,15 +6,13 @@ using System.Linq;
 
 namespace Rbac.IRepository
 {
-    public interface IRepositoryMenu
+    public interface IRepositoryMenu: IBaseRepository<Menu,int>
     {
 
-        bool Add(Menu obj);
-        bool Delete(int id);
+        //bool Add(Menu obj);
+        //bool Updete(Menu obj);
 
-        bool Updete(Menu obj);
-
-        List<Menu> GetAll();
+       
 
 
     }

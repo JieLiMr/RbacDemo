@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace Rbac.IApplication
 {
-    public interface IMenuService
-    {
+    public interface IMenuService:IBaseService<Menu,Menu>
+        {
         List<MenuDto> GetAll();
         List<AddMenuDto> GetAddDtoAll();
         bool AddMenu(Menu  obj);

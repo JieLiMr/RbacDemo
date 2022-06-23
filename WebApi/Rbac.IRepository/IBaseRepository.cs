@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rbac.IRepository
 {
-    public interface IBaseRepositor<TEntity, TKey>
+    public interface IBaseRepository<TEntity, TKey>
       where TEntity : class
         where TKey : struct
     {
