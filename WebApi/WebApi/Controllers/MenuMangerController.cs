@@ -1,4 +1,5 @@
 ﻿using ClassLibraryDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Rbac.Entity;
@@ -9,6 +10,7 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize]
     public class MenuMangerController : ControllerBase
     {
         public MenuMangerController(IMenuService menu)

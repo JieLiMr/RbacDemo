@@ -21,5 +21,10 @@ namespace WebApi.Controllers
         {
             return service.Register(addAdmin);
         }
+    [HttpPost]
+    public bool Loign(AddAdmin obj)
+        {
+            return service.Loign(obj);
+        }
     }
 }

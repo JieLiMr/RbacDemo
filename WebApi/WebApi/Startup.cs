@@ -69,7 +69,7 @@ namespace WebApi
 
                         //是否验证密钥
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSettings:key"])),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSettings:SecretKey"])),
 
                         ValidateLifetime = true, //验证生命周期
 

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "P188SQzro3l3z77CeA+s/BI5t8un+UvkFpNrrHo2feosi/uPDbavXZmVe0cXYJAA7fE58rw+Y5W3P37/DCHeyQ==",
+  "dgSpecHash": "FllIaeYQU/nX8lXNFBUckPw3FW608ayZxepnXLeFdqHiG6eD8BqnCcf5nsoVPMzPbUg2BJWv2m7Hd2ZcpkBPMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\19083\\Desktop\\month6\\day620\\WebApi\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\19083\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\19083\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\19083\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\19083\\.nuget\\packages\\identitymodel\\6.0.0\\identitymodel.6.0.0.nupkg.sha512",
     "C:\\Users\\19083\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",
     "C:\\Users\\19083\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\19083\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
