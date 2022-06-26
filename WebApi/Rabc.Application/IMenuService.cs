@@ -8,7 +8,7 @@ namespace Rbac.IApplication
     public interface IMenuService:IBaseService<Menu,Menu>
         {
         List<MenuDto> GetAll();
-        List<AddMenuDto> GetAddDtoAll();
+        List<AddMenuNameDto> GetAddDtoAll();
         bool AddMenu(Menu  obj);
         public bool Del(int id);
         bool Edit(Menu dto);

@@ -9,6 +9,7 @@ namespace Rbac.Application
         public AutoMapperConfig()
         {
             CreateMap<Menu,EditMenuDto>().ReverseMap();
+            CreateMap<Admin,AddAdmin>().ReverseMap();
         }
     }
 }

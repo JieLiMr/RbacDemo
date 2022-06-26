@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Rbac.IRepository;
+using System.Linq.Expressions;
 
 namespace Rbac.Application
 {
@@ -21,27 +22,33 @@ namespace Rbac.Application
             this.mapper = mapper;
         }
        
-        public int Create(TDto dto)
+        public virtual int Create(TDto dto)
         {
             return repository.Create(mapper.Map<TEntity>(dto));
         }
 
-        public int Delete(int id)
+        public virtual int Delete(int id)
         {
             return repository.Delete(id);
         }
 
-        public TDto Find(int id)
+        public virtual TDto Find(int id)
         {
             return mapper.Map<TDto>(repository.GetEntity(id));
         }
 
-        public List<TDto> GetList()
+        public List<TDto> FindWhere(Expression<Func<TEntity, bool>> predicate)
+        {
+          return  mapper.Map <List<TDto>>(repository.GetList(predicate));
+            
+        }
+
+        public virtual List<TDto> GetList()
         {
             return mapper.Map<List<TDto>>(repository.GetAll()) ;
         }
 
-        public int Update(TDto dto)
+        public virtual int Update(TDto dto)
         {
             return repository.Update(mapper.Map<TEntity>(dto));
         }

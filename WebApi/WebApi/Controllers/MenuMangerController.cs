@@ -23,7 +23,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public List<AddMenuDto> GetAddDtoAll()
+        public List<AddMenuNameDto> GetAddDtoAll()
         {
             return me.GetAddDtoAll();
         }

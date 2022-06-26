@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,7 @@ namespace Rbac.IApplication
         int Delete(int id);
         TDto Find(int id);
         List<TDto> GetList();
+        List<TDto> FindWhere(Expression<Func<TEntity, bool>> predicate);
     }
 
 }

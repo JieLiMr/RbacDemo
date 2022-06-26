@@ -15,7 +15,6 @@ C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\WebApi.Gener
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\WebApi.AssemblyInfoInputs.cache
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\WebApi.AssemblyInfo.cs
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\WebApi.csproj.CoreCompileInputs.cache
-C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\scopedcss\bundle\WebApi.styles.css
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\staticwebassets\WebApi.StaticWebAssets.Manifest.cache
@@ -79,3 +78,4 @@ C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Microsoft.Ex
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\19083\Desktop\month6\day620\WebApi\WebApi\obj\Debug\net5.0\WebApi.MvcApplicationPartsAssemblyInfo.cs

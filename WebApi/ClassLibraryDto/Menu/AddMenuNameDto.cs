@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryDto
 {
-    public class AddMenuDto
+    public class AddMenuNameDto
     {
         public int value { get; set; }
         public string label { get; set; }
-        public List<AddMenuDto> children { get; set; } = new List<AddMenuDto>();
+        public List<AddMenuNameDto> children { get; set; } = new List<AddMenuNameDto>();
     }
 }

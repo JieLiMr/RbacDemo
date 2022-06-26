@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ClassLibraryDto;
+using Microsoft.AspNetCore.Http;
 using Rbac.Entity;
 using Rbac.IApplication;
 using Rbac.IRepository;
@@ -12,11 +13,12 @@ namespace Rbac.Application
     public class MenuService :BaseService<Menu,Menu>, IMenuService
     {
         private readonly IRepositoryMenu db;
-
-        public MenuService(IRepositoryMenu db,IMapper mapper):base(db,mapper)
+        private readonly IHttpContextAccessor httpContextAccessor;
+        public MenuService(IRepositoryMenu db,IMapper mapper, IHttpContextAccessor  httpContextAccessor) :base(db,mapper)
         {
            
             this.db = db;
+            this.httpContextAccessor = httpContextAccessor;
         }
         public List<MenuDto> GetAll()
         {
@@ -29,6 +31,7 @@ namespace Rbac.Application
                    MenuName=m.MenuName,
                    
                 }).ToList();
+             httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
             GetNodes(list,menu);
             return menu;
         }
@@ -56,12 +59,12 @@ namespace Rbac.Application
         }
 
 
-        public List<AddMenuDto> GetAddDtoAll()
+        public List<AddMenuNameDto> GetAddDtoAll()
         {
             var list = db.GetAll();
-            AddMenuDto menus = new AddMenuDto();
+            AddMenuNameDto menus = new AddMenuNameDto();
             var menu = list.Where(m => m.ParentId == 0)
-                .Select(m => new AddMenuDto
+                .Select(m => new AddMenuNameDto
                 {
                     value = m.MenuId,
                     label = m.MenuName,
@@ -70,11 +73,11 @@ namespace Rbac.Application
             GetAddMenuDtoNodes(list, menu);
             return menu;
         }
-        private void GetAddMenuDtoNodes(List<Menu> list, List<AddMenuDto> menu)
+        private void GetAddMenuDtoNodes(List<Menu> list, List<AddMenuNameDto> menu)
         {
             foreach (var m in menu)
             {
-                var _list = list.Where(ms => ms.ParentId == m.value).Select(ss => new AddMenuDto
+                var _list = list.Where(ms => ms.ParentId == m.value).Select(ss => new AddMenuNameDto
                 {
                     value = ss.MenuId,
                     label = ss.MenuName,

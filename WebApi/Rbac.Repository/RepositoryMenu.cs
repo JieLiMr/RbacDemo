@@ -13,29 +13,8 @@ namespace Rbac.Repository
             this.myDb= myDbContext;
         }
 
-      
-
-        //public bool Add(Menu obj)
-        //{
-        //    db.Meau.Add(obj);
-        //    return db.SaveChanges() > 0;
-        //}
-
-        //public bool Delete(int id)
-        //{
-        //    return db.Meau.DeleteByKey(id) > 0;
-        //}
-
-        //public List<Menu> GetAll()
-        //{
-        //    return db.Meau.AsQueryable().ToList();
-        //}
 
 
-        //public bool Updete(Menu obj)
-        //{
-        //    return db.Meau.Where(m => m.MenuId == obj.MenuId).UpdateFromQuery(m => new Menu { ParentId = obj.ParentId, MenuName = obj.MenuName, LinkUrl = obj.LinkUrl, }) > 0;
-        //}
 
     }
 }
