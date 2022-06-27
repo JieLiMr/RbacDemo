@@ -8,7 +8,6 @@ import 'element-ui/lib/theme-chalk/index.css';
 import VueCookies from 'vue-cookies'
 Vue.use(VueCookies);
 Vue.use(ElementUI);
-this.$cookies.config(expireTimes[2,path])
 Vue.prototype.$axios=axios;
 Vue.config.productionTip = false
 

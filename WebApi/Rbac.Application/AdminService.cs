@@ -115,6 +115,7 @@ namespace Rbac.Application
             var code =  await captcha.GenerateRandomCaptchaAsync();
 
             var result = await captcha.GenerateCaptchaImageAsync(code);
+            result.CaptchaCode = Md5(result.CaptchaCode);
             return result ;
             
         }

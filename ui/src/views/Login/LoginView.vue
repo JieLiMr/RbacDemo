@@ -2,7 +2,7 @@
   <div class="login" clearfix>
     <div class="login-wrap">
       <el-row type="flex" justify="center">
-        <el-form ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
+        <el-form ref="user" :model="user" :rules="rules" status-icon label-width="80px">
           <h3>登录</h3>
           <hr>
           <el-form-item prop="username" label="用户名">
@@ -23,7 +23,7 @@
 </template>
  
 <script>
-import d from 'js-cookie';
+import Cookies from 'js-cookie'
 export default {
   name: "login",
   data() {
@@ -53,9 +53,8 @@ export default {
             password: this.user.password
           })
           .then(res => {
-            // console.log("输出response.data.status", res.data.status);
             if (res.data.code==1) {
-              console.log(this.$cookies.get(Taken) )  
+             console.log(Cookies.get('SetCode')) 
               this.$router.push({ path: "/home" });
             }
              else {
