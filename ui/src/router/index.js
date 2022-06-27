@@ -7,6 +7,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    name:'LoginView',
+    component:()=>import('../views/Login/LoginView.vue')
+  },
+  {
+    path:'/home',
     name: 'home',
     component: HomeView,
     children:[

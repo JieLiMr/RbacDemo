@@ -66,6 +66,7 @@ export default {
     },
      showInfor()
         {
+          debugger
             this.$axios.get("https://localhost:44349/api/MenuManger/getAll").then
             (
                 res=>{

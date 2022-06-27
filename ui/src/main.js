@@ -5,7 +5,10 @@ import store from './store'
 import ElementUI from 'element-ui';
 import axios from 'axios';
 import 'element-ui/lib/theme-chalk/index.css';
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies);
 Vue.use(ElementUI);
+this.$cookies.config(expireTimes[2,path])
 Vue.prototype.$axios=axios;
 Vue.config.productionTip = false
 

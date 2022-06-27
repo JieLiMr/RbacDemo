@@ -1,7 +1,10 @@
 ﻿using ClassLibraryDto;
+using ClassLibraryDto.Admin;
+using Microsoft.AspNetCore.Mvc;
 using Rbac.Entity;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Rbac.IApplication
 {
@@ -9,6 +12,7 @@ namespace Rbac.IApplication
     {
         ResultDto Register(AddAdmin obj);
 
-        bool Loign(AddAdmin obj);
+        LoignDto Loign(AddAdmin obj);
+        Task<CaptchaResult> GenerateCaptchaImageAsync();
     }
 }

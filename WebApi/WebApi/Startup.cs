@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace WebApi
 {
@@ -39,17 +40,6 @@ namespace WebApi
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
-            });
-            services.AddDbContext<MyDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("sqlserver")));
-            services.AddAutoMapper(Assembly.Load("Rbac.Application"));
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<IRepositoryMenu, RepositoryMenu>();
-            services.AddScoped<IRepositoryAdmin, RepositoryAdmin>();
-            services.AddScoped<IMenuService, MenuService>();
-            services.AddScoped<IAdminService, AdminService>();
 
             services.AddAuthentication(options =>
             {
@@ -80,6 +70,34 @@ namespace WebApi
                 }
                 );
 
+            
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
+                c.OperationFilter<AddResponseHeadersFilter>();
+                c.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
+                c.OperationFilter<SecurityRequirementsOperationFilter>();
+
+                //在header中添加token，传递到后台
+                c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Description = "JWT授权(数据将在请求头中进行传递)直接在下面框中输入Bearer {token}(注意两者之间是一个空格) \"",
+                    Name = "Authorization",//jwt默认的参数名称
+                    In = ParameterLocation.Header,//jwt默认存放Authorization信息的位置(请求头中)
+                    Type = SecuritySchemeType.ApiKey
+                });
+            });
+            services.AddDbContext<MyDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("sqlserver")));
+            services.AddAutoMapper(Assembly.Load("Rbac.Application"));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IRepositoryMenu, RepositoryMenu>();
+            services.AddScoped<IRepositoryAdmin, RepositoryAdmin>();
+            services.AddScoped<IMenuService, MenuService>();
+            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<ICaptcha, RepositoryCaptcha>();
+
+
 
         }
 
@@ -97,9 +115,13 @@ namespace WebApi
 
             app.UseRouting();
 
-            app.UseCors(o=>o.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+
+            app.UseCors(o => o.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
             //认证中间件
+            app.UseAuthentication();
+
+            //授权中间件
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
