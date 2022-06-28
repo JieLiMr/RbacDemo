@@ -2,7 +2,7 @@
   <div class="login" clearfix>
     <div class="login-wrap">
       <el-row type="flex" justify="center">
-        <el-form ref="user" :model="user" :rules="rules" status-icon label-width="80px">
+        <el-form ref="user" :model="user" :rules="rules" status-icon label-width="80px" >
           <h3>登录</h3>
           <hr>
           <el-form-item prop="username" label="用户名">
@@ -11,9 +11,9 @@
           <el-form-item id="password" prop="password" label="密码">
             <el-input v-model="user.password" show-password placeholder="请输入密码"></el-input>
           </el-form-item>
-           <el-form-item id="password" prop="password" label="验证码">
-            <el-input v-model="user.password" show-password placeholder="请输入验证码"></el-input>
-            <img src="" alt="">
+           <el-form-item id="password" prop="password" label="验证码" >
+            <el-input v-model="user.password" show-password placeholder="请输入验证码" :inline="true" ></el-input>
+            <img :src="imgpath" width="100px" :inline="true">
           </el-form-item>
           <router-link to="/">找回密码</router-link>
           <router-link to="/register">注册账号</router-link>
@@ -36,6 +36,7 @@ export default {
         username: "",
         password: ""
       },
+      imgpath:`${this.$axios.defaults.baseURL}api/Admin/Captcha`,
        rules:{
          username: [
             { required: true, message: '请输入用户名', trigger: 'blur' },
@@ -49,6 +50,10 @@ export default {
     };
   },
   created() {},
+  mounted()
+  {
+    //this.Captcha();
+  },
   methods: {
     doLogin() {
       if (!this.user.username) {
@@ -62,13 +67,15 @@ export default {
         //校验用户名和密码是否正确;
         // this.$router.push({ path: "/personal" });
         this.$axios
-          .post("https://localhost:44349/api/Admin/Loign", {
+          .post("api/Admin/Loign", {
             userName: this.user.username,
             password: this.user.password
           })
           .then(res => {
             if (res.data.code==1) {
-             console.log(Cookies.set('Taken',res.data.jwtCode)) 
+              debugger
+             Cookies.set('Taken',res.data.jwtCode) 
+             this.$axios.defaults.headers.common['Authorization'] = `bearer ${Cookies.get('Taken')}` ;
               this.$router.push({ path: "/home" });
             }
              else {
@@ -76,6 +83,16 @@ export default {
             }
           });
       }
+    },
+    Captcha()
+    {
+       this.$axios.get("api/Admin/Captcha",{responseType:'blob'}).then
+            (
+                res=>{
+                    this.imgpath=window.URL.createObjectURL(res.data);
+                }
+                
+            )
     }
   }
 };
@@ -93,8 +110,8 @@ export default {
 .login-wrap {
   /* background: url("../assets/images/login_bg.png") no-repeat; */
   background-size: cover;
-  width: 400px;
-  height: 350px;
+  width: 450px;
+  height: 450px;
   margin: 215px auto;
   overflow: hidden;
   padding-top: 10px;

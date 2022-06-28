@@ -88,6 +88,17 @@ namespace WebApi
                     Type = SecuritySchemeType.ApiKey
                 });
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.WithOrigins("http://localhost:8080")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+
+                    );
+            });
+
             services.AddDbContext<MyDbContext>(o => o.UseSqlServer(Configuration.GetConnectionString("sqlserver")));
             services.AddAutoMapper(Assembly.Load("Rbac.Application"));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -96,6 +107,14 @@ namespace WebApi
             services.AddScoped<IMenuService, MenuService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<ICaptcha, RepositoryCaptcha>();
+
+            //services.Configure<CookiePolicyOptions>(options =>
+            //{
+            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+            //    options.CheckConsentNeeded = context => false;//关闭GDPR规范    
+            //    options.MinimumSameSitePolicy = SameSiteMode.None;
+            //});
+
 
 
 
@@ -111,12 +130,14 @@ namespace WebApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi v1"));
             }
 
-            app.UseHttpsRedirection();
+            
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
-
-
-            app.UseCors(o => o.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+            app.UseCors("CorsPolicy");
+            app.UseCookiePolicy();
+          
+            //app.UseCors(o => o.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
             //认证中间件
             app.UseAuthentication();

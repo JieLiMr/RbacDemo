@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import Cookies from 'js-cookie'
 import myitem from "../views/MenuView.vue";
 export default {
   name: "Home",
@@ -57,7 +58,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$route)
     this.showInfor();
   },
   methods: {

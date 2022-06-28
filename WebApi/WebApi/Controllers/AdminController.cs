@@ -30,7 +30,8 @@ namespace WebApi.Controllers
         public LoignDto Loign(AddAdmin obj)
         {
            var result= service.Loign(obj);
-            httpContextAccessor.HttpContext.Response.Cookies.Append("PwdCode", result.JWTCode );
+            var code = httpContextAccessor.HttpContext.Request.Cookies["PwdCode"];
+            httpContextAccessor.HttpContext.Response.Cookies.Append("Token", result.JWTCode );
             return result;
         }
         [HttpGet]
@@ -39,8 +40,7 @@ namespace WebApi.Controllers
             var result = await service.GenerateCaptchaImageAsync();
 
             httpContextAccessor.HttpContext.Response.Cookies.Append("PwdCode",result.CaptchaCode);
-         
-
+        
             return File(result.CaptchaMemoryStream.ToArray(), "image/png");
 
         }
