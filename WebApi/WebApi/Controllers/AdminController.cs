@@ -30,7 +30,7 @@ namespace WebApi.Controllers
         public LoignDto Loign(AddAdmin obj)
         {
            var result= service.Loign(obj);
-        
+            httpContextAccessor.HttpContext.Response.Cookies.Append("PwdCode", result.JWTCode );
             return result;
         }
         [HttpGet]

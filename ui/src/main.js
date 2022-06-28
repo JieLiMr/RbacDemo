@@ -10,6 +10,7 @@ Vue.use(VueCookies);
 Vue.use(ElementUI);
 Vue.prototype.$axios=axios;
 Vue.config.productionTip = false
+axios.defaults.headers.common['Authorization'] = `bearer ${VueCookies.get('Taken')}` ;
 
 new Vue({
   router,

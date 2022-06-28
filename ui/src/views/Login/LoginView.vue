@@ -11,6 +11,10 @@
           <el-form-item id="password" prop="password" label="密码">
             <el-input v-model="user.password" show-password placeholder="请输入密码"></el-input>
           </el-form-item>
+           <el-form-item id="password" prop="password" label="验证码">
+            <el-input v-model="user.password" show-password placeholder="请输入验证码"></el-input>
+            <img src="" alt="">
+          </el-form-item>
           <router-link to="/">找回密码</router-link>
           <router-link to="/register">注册账号</router-link>
           <el-form-item>
@@ -31,7 +35,17 @@ export default {
       user: {
         username: "",
         password: ""
-      }  
+      },
+       rules:{
+         username: [
+            { required: true, message: '请输入用户名', trigger: 'blur' },
+            
+          ],
+          password: [
+            { required: true, message: '请输入密码', trigger: 'change' }
+          ],
+       }
+
     };
   },
   created() {},
@@ -54,7 +68,7 @@ export default {
           })
           .then(res => {
             if (res.data.code==1) {
-             console.log(Cookies.get('SetCode')) 
+             console.log(Cookies.set('Taken',res.data.jwtCode)) 
               this.$router.push({ path: "/home" });
             }
              else {
@@ -71,7 +85,7 @@ export default {
 <style scoped>
 .login {
   width: 100%;
-  height: 740px;
+  height: 800px;
   /* background: url("../assets/images/bg1.png") no-repeat; */
   background-size: cover;
   overflow: hidden;
@@ -80,7 +94,7 @@ export default {
   /* background: url("../assets/images/login_bg.png") no-repeat; */
   background-size: cover;
   width: 400px;
-  height: 300px;
+  height: 350px;
   margin: 215px auto;
   overflow: hidden;
   padding-top: 10px;
