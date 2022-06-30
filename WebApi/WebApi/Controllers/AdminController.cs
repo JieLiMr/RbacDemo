@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Rbac.Entity;
 using Rbac.IApplication;
 using Rbac.IRepository;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace WebApi.Controllers
@@ -29,10 +30,7 @@ namespace WebApi.Controllers
         [HttpPost]
         public LoignDto Loign(AddAdmin obj)
         {
-           var result= service.Loign(obj);
-            var code = httpContextAccessor.HttpContext.Request.Cookies["PwdCode"];
-            httpContextAccessor.HttpContext.Response.Cookies.Append("Token", result.JWTCode );
-            return result;
+            return service.Loign(obj);
         }
         [HttpGet]
         public async Task<FileContentResult> CaptchaAsync()
@@ -43,6 +41,12 @@ namespace WebApi.Controllers
         
             return File(result.CaptchaMemoryStream.ToArray(), "image/png");
 
+        }
+
+        [HttpGet]
+        public List<UserInfor> GetUserInfors()
+        {
+            return service.GetUserInfors();
         }
     }
 }

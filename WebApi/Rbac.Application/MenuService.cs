@@ -62,7 +62,7 @@ namespace Rbac.Application
         public List<AddMenuNameDto> GetAddDtoAll()
         {
             var list = db.GetAll();
-            AddMenuNameDto menus = new AddMenuNameDto();
+            //AddMenuNameDto menus = new AddMenuNameDto();
             var menu = list.Where(m => m.ParentId == 0)
                 .Select(m => new AddMenuNameDto
                 {
@@ -117,7 +117,7 @@ namespace Rbac.Application
 
         public bool AddMenu(Menu obj)
         {
-            throw new NotImplementedException();
+           return db.Create(obj)>0;
         }
     }
 }

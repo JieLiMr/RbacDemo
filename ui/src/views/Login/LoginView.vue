@@ -11,8 +11,8 @@
           <el-form-item id="password" prop="password" label="密码">
             <el-input v-model="user.password" show-password placeholder="请输入密码"></el-input>
           </el-form-item>
-           <el-form-item id="password" prop="password" label="验证码" >
-            <el-input v-model="user.password" show-password placeholder="请输入验证码" :inline="true" ></el-input>
+           <el-form-item id="password" prop="email" label="验证码" >
+            <el-input v-model="user.email"  placeholder="请输入验证码" :inline="true" ></el-input>
             <img :src="imgpath" width="100px" :inline="true">
           </el-form-item>
           <router-link to="/">找回密码</router-link>
@@ -34,15 +34,19 @@ export default {
     return {
       user: {
         username: "",
-        password: ""
+        password: "",
+        email:""
       },
-      imgpath:`${this.$axios.defaults.baseURL}api/Admin/Captcha`,
+      imgpath:`${this.$axios.defaults.baseURL}/api/Admin/Captcha`,
        rules:{
          username: [
             { required: true, message: '请输入用户名', trigger: 'blur' },
             
           ],
           password: [
+            { required: true, message: '请输入密码', trigger: 'change' }
+          ],
+            email: [
             { required: true, message: '请输入密码', trigger: 'change' }
           ],
        }
@@ -64,12 +68,11 @@ export default {
         this.$message.error("请输入密码！");
         return;
       } else {
-        //校验用户名和密码是否正确;
-        // this.$router.push({ path: "/personal" });
         this.$axios
-          .post("api/Admin/Loign", {
+          .post("/api/Admin/Loign", {
             userName: this.user.username,
-            password: this.user.password
+            password: this.user.password,
+            email:this.user.email
           })
           .then(res => {
             if (res.data.code==1) {
@@ -86,7 +89,7 @@ export default {
     },
     Captcha()
     {
-       this.$axios.get("api/Admin/Captcha",{responseType:'blob'}).then
+       this.$axios.get("/api/Admin/Captcha",{responseType:'blob'}).then
             (
                 res=>{
                     this.imgpath=window.URL.createObjectURL(res.data);

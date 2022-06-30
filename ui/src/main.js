@@ -13,10 +13,6 @@ axios.defaults.baseURL = 'http://localhost:33437';
 axios.defaults.headers.common['Authorization'] = `bearer ${VueCookies.get('Taken')}` ;
 Vue.prototype.$axios=axios;
 Vue.config.productionTip = false
-
-
-
-
 new Vue({
   router,
   store,

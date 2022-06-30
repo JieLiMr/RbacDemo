@@ -107,17 +107,8 @@ namespace WebApi
             services.AddScoped<IMenuService, MenuService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<ICaptcha, RepositoryCaptcha>();
-
-            //services.Configure<CookiePolicyOptions>(options =>
-            //{
-            //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-            //    options.CheckConsentNeeded = context => false;//¹Ø±ÕGDPR¹æ·¶    
-            //    options.MinimumSameSitePolicy = SameSiteMode.None;
-            //});
-
-
-
-
+            services.AddScoped<IRepositoryRole,RepositoryRole>();
+            services.AddScoped<IRoleService,RoleService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

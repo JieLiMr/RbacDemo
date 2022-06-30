@@ -1,5 +1,6 @@
 <template>
     <div>
+     
      <el-form ref="form" :model="form" label-width="80px">
     <el-form-item label="父级菜单">
       <el-cascader
@@ -45,7 +46,7 @@
     methods:{
         showDate()
         {
-            this.$axios.get("https://localhost:44349/api/MenuManger/GetAddDtoAll").then
+            this.$axios.get("/api/MenuManger/GetAddDtoAll").then
             (
                 res=>{
                     var reg = new RegExp('\\,"children":\\[]', 'g')
@@ -61,7 +62,7 @@
       },
       onSubmit()
       {
-        this.$axios.post("https://localhost:44349/api/MenuManger/AddMenu",this.form).then
+        this.$axios.post("/api/MenuManger/AddMenu",this.form).then
                     (
                         res=>{
                             if(res.data)

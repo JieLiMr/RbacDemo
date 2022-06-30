@@ -41,7 +41,8 @@ namespace Rbac.Application
 
         public ResultDto Register(AddAdmin obj)
         {
-            if (db.GetEntity(m => m.UserName == obj.UserName.ToLower()) != null)
+            //db.GetEntity(m => m.UserName == obj.UserName.ToLower()) != null
+            if (FindWhere(m => m.UserName == obj.UserName.ToLower()) != null)
             {
                 return new ResultDto { Code = 1, Msg = "此用户以使用" };
             }
@@ -61,9 +62,17 @@ namespace Rbac.Application
 
         public LoignDto Loign(AddAdmin obj)
         {
-            
-            var list= db.GetList(m => m.UserName == obj.UserName.ToLower());
             LoignDto dto = new LoignDto();
+            var code = httpContextAccessor.HttpContext.Request.Cookies["PwdCode"];
+            if(code!=Md5(obj.Email))
+            {
+                dto.Code = 0;
+                dto.Message = "验证码不正确";
+                return dto;
+            }
+            
+            var list= FindWhere(m => m.UserName == obj.UserName && m.Password == obj.Password).ToList();
+            
             
             if (list.Count!=1)
             {
@@ -106,6 +115,7 @@ namespace Rbac.Application
                 dto.Code = 1;
                 dto.Message = "登录成功";
                 dto.JWTCode = jwt;
+                httpContextAccessor.HttpContext.Response.Cookies.Append("Token", jwt);
                 return dto;
             }
         }
@@ -113,11 +123,16 @@ namespace Rbac.Application
         public async Task<CaptchaResult> GenerateCaptchaImageAsync()
         {
             var code =  await captcha.GenerateRandomCaptchaAsync();
-
             var result = await captcha.GenerateCaptchaImageAsync(code);
             result.CaptchaCode = Md5(result.CaptchaCode);
             return result ;
             
         }
+
+        public  List<UserInfor>  GetUserInfors()
+        {
+             return  mapper.Map<List<UserInfor>>(db.GetAll());    
+        }
+
     }
 }

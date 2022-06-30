@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ClassLibraryDto;
+using ClassLibraryDto.Admin;
 using Rbac.Entity;
 
 namespace Rbac.Application
@@ -10,6 +11,8 @@ namespace Rbac.Application
         {
             CreateMap<Menu,EditMenuDto>().ReverseMap();
             CreateMap<Admin,AddAdmin>().ReverseMap();
+            CreateMap<UserInfor, Admin>().ReverseMap();
+            CreateMap<Role,Role>().ReverseMap();
         }
     }
 }

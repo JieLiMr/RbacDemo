@@ -30,6 +30,12 @@ const routes = [
         name: 'Edit',
         component: () => import('../views/EditView.vue')
       }
+      ,
+      {
+        path: '/Role',
+        name: 'Role',
+        component: () => import('../views/Role.vue')
+      }
     ]
   },
   {

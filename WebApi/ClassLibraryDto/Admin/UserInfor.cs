@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Rbac.Entity
+namespace ClassLibraryDto.Admin
 {
-    public class Admin:BaseClass
+    public class UserInfor
     {
         ///<summary>
         ///管理员Id
