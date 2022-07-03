@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rbac.IRepository
 {
-    public interface IRepositoryRole : IBaseRepository<Role, int>
+    public interface IRepositoryMenuRole:IBaseRepository<MenuRole,int>
     {
-      
     }
 }

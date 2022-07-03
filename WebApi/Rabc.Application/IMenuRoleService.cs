@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Rbac.IApplication
 {
-    public  interface IRoleService : IBaseService<Role,Role>
+    public interface IMenuRoleService:IBaseService<MenuRole, MenuRole>
     {
-       
+        bool MenuRoleAdd(RoleMenuDto dto);
     }
 }

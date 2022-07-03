@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ClassLibraryDto;
 using Rbac.Entity;
 using Rbac.IApplication;
 using Rbac.IRepository;
@@ -21,5 +22,6 @@ namespace Rbac.Application
             this.repository = repository;
             this.mapper = mapper;
         }
+     
     }
 }

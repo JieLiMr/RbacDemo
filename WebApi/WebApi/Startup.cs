@@ -108,7 +108,9 @@ namespace WebApi
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<ICaptcha, RepositoryCaptcha>();
             services.AddScoped<IRepositoryRole,RepositoryRole>();
-            services.AddScoped<IRoleService,RoleService>();
+            services.AddScoped<IRoleService,RoleService>();      
+            services.AddScoped<IRepositoryMenuRole,RepositoryMenuRole>();
+            services.AddScoped<IMenuRoleService, MenuRoleService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -39,7 +39,7 @@
 
 <script>
 import Cookies from 'js-cookie'
-import myitem from "../views/MenuView.vue";
+import myitem from "./MenuView.vue";
 export default {
   name: "Home",
   components: {

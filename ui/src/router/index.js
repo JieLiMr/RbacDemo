@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/Menu/HomeView.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +35,14 @@ const routes = [
         path: '/Role',
         name: 'Role',
         component: () => import('../views/Role.vue')
+      },  {
+        path: '/MenuView',
+        name: 'MenuView',
+        component: () => import('../views/Menu/MenuView.vue')
+      },  {
+        path: '/RoleEdit',
+        name: 'RoleEdit',
+        component: () => import('../views/RoleEdit.vue')
       }
     ]
   },
@@ -44,11 +52,7 @@ const routes = [
     component: () => import('../views/AboutView.vue')
   },
  
-  {
-    path: '/MenuView',
-    name: 'MenuView',
-    component: () => import('../views/MenuView.vue')
-  }
+
   ,
  
   
