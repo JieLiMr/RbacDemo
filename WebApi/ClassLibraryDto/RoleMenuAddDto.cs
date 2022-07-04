@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryDto
 {
-    public class RoleMenuDto
+    public class RoleMenuAddDto
     {
         public int[] roleid { get; set; }
         public int id { get; set; }

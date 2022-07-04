@@ -34,7 +34,7 @@ const routes = [
       {
         path: '/Role',
         name: 'Role',
-        component: () => import('../views/Role.vue')
+        component: () => import('../views/Role/Role.vue')
       },  {
         path: '/MenuView',
         name: 'MenuView',
@@ -42,7 +42,12 @@ const routes = [
       },  {
         path: '/RoleEdit',
         name: 'RoleEdit',
-        component: () => import('../views/RoleEdit.vue')
+        component: () => import('../views/Role/ShareRoleMenu.vue')
+      }
+      ,  {
+        path: '/UserInforView',
+        name: 'UserInforView',
+        component: () => import('../views/Admin/UserInforView.vue')
       }
     ]
   },

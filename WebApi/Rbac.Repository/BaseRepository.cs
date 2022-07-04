@@ -41,7 +41,8 @@ namespace Rbac.Repository
         /// <returns></returns>
         public virtual int Delete(Expression<Func<TEntity, bool>> predicate)
         {
-          return myDb.Set<TEntity>().Where(predicate).DeleteFromQuery();
+           myDb.Set<TEntity>().Where(predicate).DeleteFromQuery();
+           return myDb.SaveChanges();
         }
         /// <summary>
         /// 根据主键删除

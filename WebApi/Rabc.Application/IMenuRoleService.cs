@@ -10,6 +10,6 @@ namespace Rbac.IApplication
 {
     public interface IMenuRoleService:IBaseService<MenuRole, MenuRole>
     {
-        bool MenuRoleAdd(RoleMenuDto dto);
+        bool MenuRoleAdd(RoleMenuAddDto dto);
     }
 }

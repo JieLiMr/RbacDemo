@@ -21,12 +21,12 @@ namespace Rbac.Application
             this.repository = repository;
             this.mapper = mapper;
         }
-        public bool MenuRoleAdd(RoleMenuDto dto)
+        public bool MenuRoleAdd(RoleMenuAddDto dto)
         {
             var find= repository.GetList(m=>m.RoleId==dto.id).ToList();
             if(find.Count>0)
             {
-                return false;
+                repository.Delete(m => m.RoleId == dto.id);
             }
             var obj = dto.roleid.Select(m => new MenuRole { MenuId = m, RoleId = dto.id }).ToList();
             return repository.BulkCreate(obj) > 0;

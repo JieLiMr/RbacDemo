@@ -43,7 +43,7 @@
     </div>
 </template>
 <script>
-import roleEdit from '../views/RoleEdit.vue';
+import roleEdit from './ShareRoleMenu.vue';
 export default {
 name: "Role",
 components: {

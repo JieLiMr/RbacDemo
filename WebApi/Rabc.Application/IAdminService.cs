@@ -15,5 +15,6 @@ namespace Rbac.IApplication
         LoignDto Loign(AddAdmin obj);
         Task<CaptchaResult> GenerateCaptchaImageAsync();
         List<UserInfor> GetUserInfors();
+
     }
 }
