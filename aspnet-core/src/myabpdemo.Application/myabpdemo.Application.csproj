@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>myabpdemo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\myabpdemo.Domain\myabpdemo.Domain.csproj" />
+    <ProjectReference Include="..\myabpdemo.Application.Contracts\myabpdemo.Application.Contracts.csproj" />
+    <ProjectReference Include="..\myabpdemo.EntityFrameworkCore\myabpdemo.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application" Version="4.4.4" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="4.4.4" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="4.4.4" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="4.4.4" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="4.4.4" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="4.4.4" />
+  </ItemGroup>
+
+</Project>
